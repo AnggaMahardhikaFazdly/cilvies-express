@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head></head>
+
+<body>
+    <button id="get">Get Post</button>
+    <button id="post">Post Request</button>
+</body>
+<script>
+    const getButton = document.getElementById("get");
+    getButton.addEventListener("click", () => {
+        fetch("http://localhost:8000/feed/post")
+            .then(res => res.json())
+            .then(resData => console.log(resData))
+            .catch(err => console.log(err))
+    })
+</script>
+
+</html>
